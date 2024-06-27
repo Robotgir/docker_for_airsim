@@ -29,7 +29,7 @@ Nvidia driver & kernel combination: 555.42.02 & 5.11.5-051105-generic and 470.25
 
 - use below command to launch the container, make sure you update the path to AirSim repo and UEenvironment binary.
 
-`sudo docker run --rm -it --privileged -e DISPLAY=$DISPLAY -e XAUTHORITY=$XAUTHORITY -e XDG_RUNTIME_DIR=/run/user/$UID -v /usr/share/vulkan/icd.d:/usr/share/vulkan/icd.d -e XR_LOADER_DEBUG=all  -v /tmp/.X11-unix:/tmp/.X11-unix -v $XAUTHORITY:$XAUTHORITY -v /home/PATH_TO_AirSim/AirSim:/home/airsim_user/workspace/AirSim -v /home/PATH_TO_DOWNLOADED_ENVIRONMENT/AbandonedPark:/home/airsim_user/Downloads --gpus all --entrypoint /bin/bash giri6937/ue_airsim_inside_docker:foxy`
+`sudo docker run --rm -it --privileged -e DISPLAY=$DISPLAY -e XAUTHORITY=$XAUTHORITY -e XDG_RUNTIME_DIR=/run/user/$UID -v /usr/share/vulkan/icd.d:/usr/share/vulkan/icd.d -v /lib:/lib -e XR_LOADER_DEBUG=all  -v /tmp/.X11-unix:/tmp/.X11-unix -v $XAUTHORITY:$XAUTHORITY -v /home/PATH_TO_AirSim/AirSim:/home/airsim_user/workspace/AirSim -v /home/PATH_TO_DOWNLOADED_ENVIRONMENT/AbandonedPark:/home/airsim_user/Downloads --gpus all --entrypoint /bin/bash giri6937/ue_airsim_inside_docker:foxy`
 - Inside the container enter into the directery where the script file to launch the UE environment is for example:
 `cd Downloads/LinuxNoEditor/`
 launch the UE environment with below command
@@ -53,3 +53,9 @@ launch the UE environment with below command
 - in tab 2
     
     `ros2 topic list`
+
+### To build AirSIm related ros2 packages on foxy there are some fixes that needed to be made on my side inside docker.
+
+- see if these commits are applicable to you
+    - https://github.com/Robotgir/AirSim/commit/4444d7464c62330a3e4b5b112604810287124d82
+    - https://github.com/Robotgir/AirSim/commit/62023d32ef574887d1cbc273bb074226e3fbc1f9
