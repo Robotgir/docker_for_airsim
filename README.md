@@ -3,13 +3,13 @@ This repo aims to create, maintain Dockerfiles and ready to use docker container
 
 Grab the docker image from [docker hub](https://hub.docker.com/u/giri6937).  This repo provides the images in:
 * [giri6937/ue_airsim_inside_docker](https://hub.docker.com/r/giri6937/ue_airsim_inside_docker/tags)
-check out the ta  
+check out the tags relavant for you.
 
 
   
 ## Description
 
-- This docker container has UE(without editor), ros2 foxy installed and is compatible with Airsim.
+- This docker container has UE(without editor), ros2 foxy installed and is compatible with AirSim.
 - Please follow below instructions to succesfully launch the environment.
 - Tested on Ubuntu: 20.04 host, 
 Nvidia driver & kernel combination: 555.42.02 & 5.11.5-051105-generic and 470.256.02 & 5.15.0-107-generic
@@ -36,7 +36,7 @@ launch the UE environment with below command
     
     `./AbandonedPark.sh -windowed -ResX=1080 -ResY=720`
 
-### Testing Airsim:
+### Testing AirSim:
 
 - build the ros2 workspace within AirSim repo using following command
     
