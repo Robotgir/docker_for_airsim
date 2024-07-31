@@ -1,4 +1,4 @@
-# docker_for_airsim
+# docker_for_AirSim
 This repo aims to create, maintain Dockerfiles and ready to use docker containers for now archieved AirSim simulator for various configurations and maintain them as this simulator has potential use in the field of UAV and Robotics development.
 
 Grab the docker image from [docker hub](https://hub.docker.com/u/giri6937).  This repo provides the images in:
@@ -54,7 +54,7 @@ launch the UE environment with below command
     
     `ros2 topic list`
 
-### To build AirSIm related ros2 packages on foxy there are some fixes that needed to be made on my side inside docker.
+### To build AirSim related ros2 packages on foxy there are some fixes that needed to be made on my side inside docker.
 
 - see if these commits are applicable to you
     - https://github.com/Robotgir/AirSim/commit/4444d7464c62330a3e4b5b112604810287124d82
